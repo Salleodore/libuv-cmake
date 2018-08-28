@@ -128,6 +128,7 @@ else()
             ${LIBUVDIR}/src/unix/linux-inotify.c
             ${LIBUVDIR}/src/unix/linux-syscalls.c
             ${LIBUVDIR}/src/unix/linux-syscalls.h
+			${LIBUVDIR}/src/unix/pthread-fixes.c
             )
     endif()
 
@@ -174,10 +175,10 @@ else()
     if (${CMAKE_SYSTEM_NAME} MATCHES "Android")
         set (SOURCES ${SOURCES}
             ${LIBUVDIR}/include/android-ifaddrs.h
-            ${LIBUVDIR}/include/pthread-fixes.h
+            #${LIBUVDIR}/include/pthread-fixes.h
             #${LIBUVDIR}/include/pthread-barrier.h   ## since 1.10 `fixes` renamed to `barrier`
             ${LIBUVDIR}/src/unix/android-ifaddrs.c
-            ${LIBUVDIR}/src/unix/pthread-fixes.c
+            #${LIBUVDIR}/src/unix/pthread-fixes.c
             #${LIBUVDIR}/src/unix/pthread-barrier.c  ## since 1.10 `fixes` renamed to `barrier`
             )
     endif()
